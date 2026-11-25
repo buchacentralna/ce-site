@@ -1,17 +1,21 @@
-# Сайт-візитка «Буча Центральна» — 3 прототипи
+# Bucha Centralna church site: 3 prototypes
 
-Запуск (з цієї папки):
+Plain static HTML and CSS, no build step. Run it from this folder:
 
     python3 -m http.server 8090
 
-Відкривати через http://localhost:8090/ (саме `localhost`, не `127.0.0.1`: з `127.0.0.1` YouTube-вставки показують «This video is unavailable»).
+Open http://localhost:8090/ (use `localhost`, not `127.0.0.1`: on `127.0.0.1` the YouTube embeds
+show "This video is unavailable").
 
-- `/` — вибір варіанту
-- `/v1/` — ідея Elevation Church (США): монохром, великі фото
-- `/v2/` — ідея «Джерело життя» (Львів): темний, відео-hero
-- `/v3/` — ідея «Блага Звістка» (Київ): світлий, плитки як у застосунку
+- `/`: choose a variant
+- `/v1/`: based on the idea of Elevation Church (USA): monochrome, large photos
+- `/v2/`: based on the idea of "Dzherelo Zhyttia" church (Lviv): dark, video hero
+- `/v3/`: based on the idea of "Blaha Zvistka" church (Kyiv): light, app-like tiles
 
-Факти й джерела: `CONTENT.md`. Фото: `assets/photos/` (вибрані), `assets/fb/`, `assets/ig/` (усе завантажене з соцмереж церкви).
+Facts and sources: `CONTENT.md`. Photos: `assets/photos/` (chosen), `assets/fb/`, `assets/ig/`
+(everything downloaded from the church's social media).
 
-Публічне посилання для показу (dev mode): `./serve.sh` — піднімає сервер і ngrok, друкує обидва посилання; Ctrl+C зупиняє.
-Потрібні `python3` і `ngrok` з authtoken (`ngrok config add-authtoken <токен>`). Покрокова інструкція (і для Claude Code) — `CLAUDE.md`.
+Public link for a demo (dev mode): `./serve.sh` starts the server and ngrok and prints both links;
+Ctrl+C stops them. It needs `python3` and `ngrok` with an authtoken
+(`ngrok config add-authtoken <token>`). Step-by-step instructions (also for Claude Code) are in
+`CLAUDE.md`.
