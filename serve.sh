@@ -4,8 +4,8 @@ set -euo pipefail
 cd "$(dirname "$0")"
 PORT="${PORT:-8090}"
 
-command -v python3 >/dev/null || { echo "Потрібен python3 (https://www.python.org/downloads/)"; exit 1; }
-command -v ngrok >/dev/null || { echo "Потрібен ngrok: https://ngrok.com/download (див. README.md)"; exit 1; }
+command -v python3 >/dev/null || { echo "python3 is required: https://www.python.org/downloads/"; exit 1; }
+command -v ngrok >/dev/null || { echo "ngrok is required: https://ngrok.com/download (see CLAUDE.md)"; exit 1; }
 
 mkdir -p .run
 python3 -m http.server "$PORT" --bind 127.0.0.1 > .run/http.log 2>&1 &
@@ -15,7 +15,7 @@ NGROK=$!
 trap 'kill $SERVER $NGROK 2>/dev/null || true' EXIT
 
 sleep 1
-kill -0 $SERVER 2>/dev/null || { echo "Сервер не стартував (порт $PORT зайнятий?). Спробуй: PORT=8091 ./serve.sh"; cat .run/http.log; exit 1; }
+kill -0 $SERVER 2>/dev/null || { echo "The server did not start (is port $PORT busy?). Try: PORT=8091 ./serve.sh"; tail -1 .run/http.log; exit 1; }
 
 URL=""
 for _ in $(seq 1 30); do
@@ -25,7 +25,7 @@ for _ in $(seq 1 30); do
   sleep 0.5
 done
 if [ -z "$URL" ]; then
-  echo "ngrok не відкрив тунель. Ось його лог:"; grep -iE 'err|fail' .run/ngrok.log || cat .run/ngrok.log
+  echo "ngrok did not open a tunnel. Its log:"; grep -iE 'err|fail' .run/ngrok.log || cat .run/ngrok.log
   exit 1
 fi
 
