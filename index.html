@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Буча Центральна — 3 варіанти сайту</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#0f1115; --card:#181b22; --text:#f2f3f5; --muted:#9aa0ab; --red:#e8404f; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.5 Manrope, system-ui, sans-serif; }
+  main { max-width:1180px; margin:0 auto; padding:48px 16px 64px; }
+  header { display:flex; gap:16px; align-items:center; margin-bottom:8px; }
+  header img { width:56px; height:56px; border-radius:50%; object-fit:cover; }
+  h1 { font-size:clamp(26px,4vw,40px); margin:0; font-weight:800; }
+  p.lead { color:var(--muted); margin:8px 0 36px; max-width:720px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; }
+  a.card { display:block; background:var(--card); border-radius:18px; overflow:hidden; color:inherit; text-decoration:none; border:1px solid #262a33; transition:transform .2s, border-color .2s; }
+  a.card:hover, a.card:focus-visible { transform:translateY(-4px); border-color:var(--red); outline:none; }
+  .shot { aspect-ratio:16/10; overflow:hidden; background:#000; }
+  .shot iframe { width:1440px; height:900px; border:0; transform:scale(.26); transform-origin:0 0; pointer-events:none; }
+  .body { padding:18px 20px 22px; }
+  .num { color:var(--red); font-weight:800; font-size:13px; letter-spacing:.12em; text-transform:uppercase; }
+  h2 { margin:6px 0 6px; font-size:22px; }
+  .body p { margin:0; color:var(--muted); font-size:14px; }
+  footer { margin-top:40px; color:var(--muted); font-size:13px; }
+  @media (prefers-reduced-motion: reduce) { a.card { transition:none; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="/assets/img/yt-avatar.jpg" alt="">
+    <h1>Церква Буча Центральна — 3 варіанти сайту-візитки</h1>
+  </header>
+  <p class="lead">Однаковий зміст (YouTube, Facebook, Google Maps), три різні підходи до дизайну. Кожен узяв ідею макета в однієї відомої протестантської церкви, без копіювання її текстів чи лого.</p>
+  <div class="grid">
+    <a class="card" href="/v1/">
+      <div class="shot"><iframe src="/v1/" title="Превʼю варіанту 1" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="body"><div class="num">Варіант 1 · США</div><h2>Монохром і фото</h2><p>Ідея: Elevation Church (elevationchurch.org). Чорно-біле, великі фото, картки «знайди свій формат», карусель проповідей.</p></div>
+    </a>
+    <a class="card" href="/v2/">
+      <div class="shot"><iframe src="/v2/" title="Превʼю варіанту 2" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="body"><div class="num">Варіант 2 · Львів</div><h2>Кінематографічний, темний</h2><p>Ідея: церква «Джерело життя» (dchurch.lviv.ua). Відео на весь екран, тонкий шрифт, скляні картки, повноекранні фото-секції.</p></div>
+    </a>
+    <a class="card" href="/v3/">
+      <div class="shot"><iframe src="/v3/" title="Превʼю варіанту 3" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="body"><div class="num">Варіант 3 · Київ</div><h2>Як застосунок: плитки</h2><p>Ідея: церква «Блага Звістка» (goodnewskiev.org). Світлий пастельний, сітка плиток «все в один дотик», інформація на першому місці.</p></div>
+    </a>
+  </div>
+  <footer>Прототип, листопад 2026. Богослужіння щосуботи о 10:00 (Instagram), прямий ефір на YouTube з ~11:30. Фото — з Facebook та Instagram церкви. Адреса: вул. Центральна, 2А, Буча.</footer>
+</main>
+</body>
+</html>

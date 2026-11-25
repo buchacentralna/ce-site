@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Церква Буча Центральна</title>
+<meta name="description" content="Церква адвентистів сьомого дня «Буча-Центральна». Богослужіння щосуботи о 10:00, вул. Центральна, 2А, Буча.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --white:#FFFFFF; --surface:#F5F5F5; --line:#E0E0E0;
+  --g75:#757575; --g61:#616161; --g42:#424242; --g21:#212121; --ink:#1D1D1D;
+  --red:#E8404F;
+  --r-card:16px; --r-btn:4px;
+  --shadow:0 10px 30px rgba(0,0,0,.14);
+  --shadow-lg:0 24px 60px rgba(0,0,0,.2);
+  --wrap:1240px; --gut:clamp(16px,4vw,48px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--white);color:var(--g21);font:400 17px/1.6 "DM Sans",system-ui,sans-serif;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{margin:0;color:var(--ink);font-weight:700;letter-spacing:-.025em;line-height:1.08}
+h2{font-size:clamp(32px,4.4vw,56px)}
+h3{font-size:21px;letter-spacing:-.01em;line-height:1.25}
+p{margin:0}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px}
+.on-dark :focus-visible,.hero :focus-visible,.foot :focus-visible{outline-color:#fff}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+.sec{padding:clamp(72px,9vw,128px) 0}
+.sec--grey{background:var(--surface)}
+.label{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--g61)}
+.lead{font-size:clamp(18px,1.6vw,21px);color:var(--g42);max-width:58ch}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(32px,4vw,56px)}
+.sec-head p{margin-top:14px}
+.skip{position:absolute;left:-9999px;top:8px;background:#fff;padding:8px 12px;z-index:100}
+.skip:focus{left:8px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:var(--r-btn);
+  font:700 13px/1 "DM Sans",sans-serif;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1.5px solid var(--ink);
+  background:var(--ink);color:#fff;transition:background .2s,color .2s}
+.btn:hover{background:var(--g42);border-color:var(--g42)}
+.btn--ghost{background:transparent;color:var(--ink)}
+.btn--ghost:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn--light{background:#fff;color:var(--ink);border-color:#fff}
+.btn--light:hover{background:var(--line);border-color:var(--line)}
+.btn--line-light{background:transparent;color:#fff;border-color:#fff}
+.btn--line-light:hover{background:#fff;color:var(--ink)}
+.icon-btn{width:40px;height:40px;border-radius:50%;display:inline-grid;place-items:center;border:1px solid var(--line);background:#fff;color:var(--ink);transition:background .2s}
+.icon-btn:hover{background:var(--surface)}
+.icon-btn svg{width:18px;height:18px}
+
+/* header */
+.topbar{background:var(--ink);color:#d6d6d6;font-size:13px}
+.topbar .wrap{display:flex;justify-content:space-between;gap:16px;min-height:36px;align-items:center}
+.topbar a{text-decoration:none;color:#fff}
+.topbar a:hover{text-decoration:underline}
+.hdr{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex;align-items:center;gap:24px;min-height:72px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.brand .mark{width:42px;height:42px;border-radius:50%;overflow:hidden;background:#000;flex-shrink:0}
+.brand .mark img{width:100%;height:100%;object-fit:cover;transform:scale(1.32)}
+.brand b{display:block;font-size:17px;line-height:1.1;color:var(--ink);letter-spacing:-.01em}
+.brand small{display:block;font-size:12px;color:var(--g75);line-height:1.3}
+.nav{display:flex;gap:28px;margin-left:auto}
+.nav a{text-decoration:none;font-size:15px;font-weight:500;color:var(--g42);padding:6px 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.hdr-tools{display:flex;align-items:center;gap:10px}
+.live{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.14em;text-decoration:none;color:var(--ink);padding:0 14px;height:40px;border:1px solid var(--line);border-radius:999px}
+.live:hover{background:var(--surface)}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(232,64,79,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(232,64,79,0)}100%{box-shadow:0 0 0 0 rgba(232,64,79,0)}}
+
+/* hero */
+.hero{position:relative;min-height:min(88vh,860px);display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#000}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.15) 70%),linear-gradient(180deg,rgba(0,0,0,.2) 0%,rgba(0,0,0,.35) 45%,rgba(0,0,0,.88) 100%)}
+.hero .wrap{position:relative;z-index:1;width:100%;padding-bottom:clamp(48px,7vw,96px);padding-top:120px}
+.hero h1{color:#fff;font-size:clamp(44px,7.6vw,112px);line-height:.95;letter-spacing:-.045em;max-width:12ch;text-shadow:0 2px 24px rgba(0,0,0,.35)}
+.hero p{font-size:clamp(18px,1.7vw,22px);max-width:44ch;margin-top:24px;color:rgba(255,255,255,.88)}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
+.hero .kicker{display:block;margin-bottom:20px;color:rgba(255,255,255,.8)}
+
+/* visit */
+.visit{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,6vw,96px);align-items:center}
+.visit figure{margin:0;border-radius:var(--r-card);overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/3}
+.visit figure img{width:100%;height:100%;object-fit:cover}
+.facts{margin:36px 0;display:grid;gap:0;border-top:1px solid var(--line)}
+.facts div{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.facts dt{font-size:14px;color:var(--g75)}
+.facts dd{margin:0;font-weight:700;color:var(--ink);font-size:19px}
+.facts dd span{display:block;font-weight:400;font-size:15px;color:var(--g61)}
+.note{background:var(--surface);border-radius:12px;padding:18px 20px;font-size:15px;color:var(--g42);margin-bottom:32px}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+
+/* featured */
+.feat{display:grid;grid-template-columns:1.6fr 1fr;gap:clamp(28px,4vw,64px);align-items:center}
+.player{position:relative;aspect-ratio:16/9;border-radius:var(--r-card);overflow:hidden;background:#000;box-shadow:var(--shadow-lg)}
+.player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.feat h2{font-size:clamp(30px,3.4vw,44px);margin:16px 0 14px}
+.feat .who{color:var(--g61);margin-bottom:28px}
+
+/* ways */
+.ways{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.way{background:#fff;border-radius:var(--r-card);padding:28px 24px 24px;display:flex;flex-direction:column;box-shadow:0 2px 10px rgba(0,0,0,.06);min-height:300px}
+.way .ico{width:52px;height:52px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;margin-bottom:28px}
+.way .ico svg{width:24px;height:24px}
+.way p{color:var(--g61);margin:10px 0 24px;font-size:16px}
+.way .btn{margin-top:auto;align-self:flex-start;padding:0 18px;min-height:44px}
+
+/* carousel */
+.car-ctrl{display:flex;gap:10px}
+.car-ctrl button{cursor:pointer}
+.track{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(270px,30vw,400px);gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding:4px var(--gut) 32px;scroll-padding:0 var(--gut);scrollbar-width:none;max-width:calc(var(--wrap) + 0px);margin:0 auto}
+.track::-webkit-scrollbar{display:none}
+.card{scroll-snap-align:start;text-decoration:none;display:block}
+.card .thumb{border-radius:var(--r-card);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:16/9;background:var(--line)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.card:hover .thumb img{transform:scale(1.03)}
+.card h3{font-size:17px;margin-top:16px;font-weight:500}
+.card:hover h3{text-decoration:underline;text-underline-offset:3px}
+.card small{display:block;margin-top:6px;color:var(--g75);font-size:14px}
+
+/* courses */
+.chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.chip{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 22px;border:1.5px solid var(--ink);border-radius:999px;text-decoration:none;font-weight:500;font-size:17px;color:var(--ink);transition:background .2s,color .2s}
+.chip:hover{background:var(--ink);color:#fff}
+.chip svg{width:16px;height:16px}
+.courses{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(32px,5vw,80px);align-items:start}
+
+/* about */
+.about{background:var(--ink);color:#cfcfcf}
+.about h2{color:#fff}
+.about .label{color:#a0a0a0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:start}
+.about blockquote{margin:0;font-size:clamp(26px,3vw,38px);line-height:1.25;letter-spacing:-.02em;color:#fff;font-weight:500}
+.about p{margin-top:20px;max-width:56ch}
+.pastor{display:flex;align-items:center;gap:16px;margin-top:36px;padding-top:28px;border-top:1px solid #3a3a3a}
+.pastor .mark{width:56px;height:56px;border-radius:50%;overflow:hidden;background:#000;flex-shrink:0}
+.pastor .mark img{width:100%;height:100%;object-fit:cover;transform:scale(1.32)}
+.pastor b{color:#fff;display:block}
+.about .btn{margin-top:32px}
+
+/* place grid */
+.place{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 24px}
+.tile{text-decoration:none;display:block}
+.tile .thumb{border-radius:var(--r-card);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3}
+.tile .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.tile:hover .thumb img{transform:scale(1.04)}
+.tile h3{margin-top:18px}
+.tile p{color:var(--g61);font-size:15px;margin-top:6px}
+.tile .more{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:5px;line-height:1.9}
+
+/* location */
+.loc{display:grid;grid-template-columns:1fr 1.5fr;gap:24px;align-items:stretch}
+.loc-card{background:#fff;border-radius:var(--r-card);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+.loc-card .strip{aspect-ratio:16/9;width:100%;object-fit:cover}
+.loc-card .in{padding:28px;display:flex;flex-direction:column;flex:1}
+.loc-card address{font-style:normal;font-size:22px;font-weight:700;color:var(--ink);line-height:1.3;margin:10px 0 8px}
+.loc-card p{color:var(--g61);margin-bottom:28px}
+.loc-card .btn{margin-top:auto;align-self:flex-start}
+.map{border-radius:var(--r-card);overflow:hidden;box-shadow:var(--shadow);min-height:440px;background:var(--line)}
+.map iframe{width:100%;height:100%;min-height:440px;border:0;display:block;filter:grayscale(1) contrast(1.05)}
+
+/* footer */
+.foot{background:var(--ink);color:#bdbdbd;padding:72px 0 40px;font-size:15px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.foot .brand b{color:#fff}
+.foot .brand small{color:#9e9e9e}
+.foot h3{color:#fff;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px}
+.foot a{color:#fff;text-decoration:none}
+.foot a:hover{text-decoration:underline}
+.soc{display:flex;gap:10px}
+.soc a{width:44px;height:44px;border-radius:50%;border:1px solid #4a4a4a;display:grid;place-items:center;color:#fff}
+.soc a:hover{background:#fff;color:var(--ink);text-decoration:none}
+.soc svg{width:20px;height:20px}
+.foot-bottom{margin-top:56px;padding-top:24px;border-top:1px solid #3a3a3a;font-size:13px;color:#9e9e9e}
+
+.variants{position:fixed;left:16px;bottom:16px;z-index:60;background:var(--ink);border:1px solid rgba(255,255,255,.35);color:#fff;font-size:13px;font-weight:500;text-decoration:none;padding:9px 14px;border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.variants:hover{background:var(--g42)}
+
+/* responsive */
+@media (max-width:1100px){
+  .nav{gap:20px}
+  .ways,.place{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:900px){
+  .hdr .wrap{flex-wrap:wrap;gap:0 16px;min-height:0;padding-top:12px}
+  .hdr-tools{margin-left:auto}
+  .nav{order:3;width:100%;margin:8px calc(-1 * var(--gut)) 0;padding:0 var(--gut);overflow-x:auto;scrollbar-width:none;gap:22px;white-space:nowrap}
+  .nav::-webkit-scrollbar{display:none}
+  .nav a{padding:10px 0 12px}
+  .visit,.feat,.courses,.about-grid,.loc{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .foot-grid>:first-child{grid-column:1/-1}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .topbar .wrap>span:last-child{display:none}
+  .hdr-tools .icon-btn{display:none}
+  .brand small{display:none}
+  .ways{grid-template-columns:1fr}
+  .way{min-height:0}
+  .place{grid-template-columns:1fr 1fr;gap:16px}
+  .tile .thumb{aspect-ratio:1/1}
+  .tile p{display:none}
+  .facts div{grid-template-columns:96px 1fr}
+  .hero .ctas .btn{flex:1 1 100%}
+  .map,.map iframe{min-height:320px}
+  .foot-grid{grid-template-columns:1fr}
+  .track{grid-auto-columns:82%}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-yt" viewBox="0 0 24 24"><path fill="currentColor" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/></g><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 22v-8.2h2.8l.4-3.2h-3.2V8.5c0-.9.3-1.6 1.6-1.6h1.7V4.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.3v3.2h2.8V22h3.4z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l10.5-6.5z"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M2 5.5c3-1.3 6.5-1.3 10 1v13c-3.5-2.3-7-2.3-10-1z"/><path d="M22 5.5c-3-1.3-6.5-1.3-10 1v13c3.5-2.3 7-2.3 10-1z"/></g></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M4 5h16v11H9l-5 4z"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M15 5l-7 7 7 7"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Перейти до змісту</a>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Богослужіння щосуботи о 10:00, прямий ефір з 11:30</span>
+    <span><a href="https://maps.app.goo.gl/dcThRpXLxfbUmT7t6" target="_blank" rel="noopener">вул. Центральна, 2А, Буча</a></span>
+  </div>
+</div>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Буча Центральна, на початок сторінки">
+      <span class="mark"><img src="/assets/img/yt-avatar.jpg" alt="" width="42" height="42"></span>
+      <span><b>Буча Центральна</b><small>Церква адвентистів сьомого дня</small></span>
+    </a>
+    <nav class="nav" aria-label="Головне меню">
+      <a href="#vizyt">Візит</a>
+      <a href="#propovidi">Проповіді</a>
+      <a href="#kursy">Курси</a>
+      <a href="#pro-nas">Про нас</a>
+      <a href="#de-my">Як дістатися</a>
+    </nav>
+    <div class="hdr-tools">
+      <a class="live" href="https://www.youtube.com/@bucha.centralna/streams" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span>НАЖИВО</a>
+      <a class="icon-btn" href="https://www.youtube.com/@bucha.centralna" target="_blank" rel="noopener" aria-label="YouTube"><svg aria-hidden="true"><use href="#i-yt"/></svg></a>
+      <a class="icon-btn" href="https://www.instagram.com/asd_bucha" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="hero-h">
+    <img src="/assets/photos/hero.jpg" alt="Прославлення на богослужінні: співаки на сцені, люди стоять у залі" fetchpriority="high">
+    <div class="wrap">
+      <span class="label kicker">Церква адвентистів сьомого дня в Бучі</span>
+      <h1 id="hero-h">Приходь — тут є місце для тебе!</h1>
+      <p>Не ідеальні люди, але служимо досконалому Богу.</p>
+      <div class="ctas">
+        <a class="btn btn--light" href="#vizyt">Плануєте візит?</a>
+        <a class="btn btn--line-light" href="#efir"><svg width="16" height="16" aria-hidden="true"><use href="#i-play"/></svg>Дивитись ефір</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="vizyt" aria-labelledby="visit-h">
+    <div class="wrap visit">
+      <figure><img src="/assets/photos/fellowship.jpg" alt="Люди за святковим столом у залі церкви" loading="lazy"></figure>
+      <div>
+        <span class="label">Перший раз у нас</span>
+        <h2 id="visit-h" style="margin-top:14px">Плануєте візит?</h2>
+        <dl class="facts">
+          <div><dt>Коли</dt><dd>Субота, 10:00<span>Богослужіння. Прямий ефір на YouTube з 11:30</span></dd></div>
+          <div><dt>Де</dt><dd>вул. Центральна, 2А<span>м. Буча, Київська обл.</span></dd></div>
+        </dl>
+        <p class="note">Адвентисти сьомого дня збираються на богослужіння в суботу, а не в неділю.</p>
+        <div class="row">
+          <a class="btn" href="https://maps.app.goo.gl/dcThRpXLxfbUmT7t6" target="_blank" rel="noopener">Прокласти маршрут</a>
+          <a class="btn btn--ghost" href="https://www.instagram.com/asd_bucha" target="_blank" rel="noopener">Поставити питання</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--grey" id="efir" aria-labelledby="feat-h">
+    <div class="wrap feat">
+      <div class="player">
+        <iframe src="https://www.youtube-nocookie.com/embed/v7hzDTJRjfk" title="Останній ефір: Чи перейшла війна у церкву" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div>
+        <span class="label">Останній ефір</span>
+        <h2 id="feat-h">Чи перейшла війна у церкву</h2>
+        <p class="who">Людмила Штанько, 14 листопада</p>
+        <div class="row">
+          <a class="btn" href="https://www.youtube.com/watch?v=v7hzDTJRjfk" target="_blank" rel="noopener">Дивитись на YouTube</a>
+          <a class="btn btn--ghost" href="https://www.youtube.com/@bucha.centralna/streams" target="_blank" rel="noopener">Усі трансляції</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="ways-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="ways-h">Знайдіть свій шлях до нас</h2>
+          <p class="lead">Прийдіть особисто, дивіться онлайн або почніть з курсу.</p>
+        </div>
+      </div>
+      <div class="ways">
+        <article class="way">
+          <span class="ico" aria-hidden="true"><svg><use href="#i-pin"/></svg></span>
+          <h3>Прийти в суботу</h3>
+          <p>Богослужіння о 10:00 на вул. Центральній, 2А.</p>
+          <a class="btn" href="#de-my">Як дістатися</a>
+        </article>
+        <article class="way">
+          <span class="ico" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
+          <h3>Дивитись онлайн</h3>
+          <p>Прямий ефір щосуботи з 11:30 на нашому YouTube-каналі.</p>
+          <a class="btn" href="https://www.youtube.com/@bucha.centralna/streams" target="_blank" rel="noopener">Відкрити YouTube</a>
+        </article>
+        <article class="way">
+          <span class="ico" aria-hidden="true"><svg><use href="#i-book"/></svg></span>
+          <h3>Курси з основ Біблії</h3>
+          <p>Відеокурси, які можна дивитись у своєму темпі.</p>
+          <a class="btn" href="#kursy">Обрати курс</a>
+        </article>
+        <article class="way">
+          <span class="ico" aria-hidden="true"><svg><use href="#i-chat"/></svg></span>
+          <h3>Написати нам в Instagram</h3>
+          <p>Маєте питання чи прохання про молитву? Напишіть нам.</p>
+          <a class="btn" href="https://www.instagram.com/asd_bucha" target="_blank" rel="noopener">Написати</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--grey" id="propovidi" aria-labelledby="ser-h" style="padding-bottom:clamp(48px,6vw,96px)">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="ser-h">Останні проповіді</h2>
+          <p class="lead">Відповіді на прості й непрості питання життя.</p>
+        </div>
+        <div class="car-ctrl">
+          <button class="icon-btn" type="button" data-dir="-1" aria-label="Попередні проповіді" aria-controls="track"><svg aria-hidden="true"><use href="#i-left"/></svg></button>
+          <button class="icon-btn" type="button" data-dir="1" aria-label="Наступні проповіді" aria-controls="track"><svg aria-hidden="true"><use href="#i-right"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <div class="track" id="track" tabindex="0" aria-label="Проповіді, гортайте вбік">
+      <a class="card" href="https://www.youtube.com/watch?v=iJRHKN7o2jQ" target="_blank" rel="noopener">
+        <div class="thumb"><img src="/assets/yt/iJRHKN7o2jQ.jpg" alt="" loading="lazy"></div>
+        <h3>Як зрозуміти, куди Бог веде твоє життя?</h3>
+      </a>
+      <a class="card" href="https://www.youtube.com/watch?v=E9oz3oVZHvg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="/assets/yt/E9oz3oVZHvg.jpg" alt="" loading="lazy"></div>
+        <h3>Скільки ти коштуєш насправді?</h3>
+      </a>
+      <a class="card" href="https://www.youtube.com/watch?v=g9JimgjLoYE" target="_blank" rel="noopener">
+        <div class="thumb"><img src="/assets/yt/g9JimgjLoYE.jpg" alt="" loading="lazy"></div>
+        <h3>Коли обставини лякають: як знайти силу в безумовній довірі?</h3>
+      </a>
+      <a class="card" href="https://www.youtube.com/watch?v=f1MjS0Zl3fs" target="_blank" rel="noopener">
+        <div class="thumb"><img src="/assets/yt/f1MjS0Zl3fs.jpg" alt="" loading="lazy"></div>
+        <h3>Чому хороші люди роблять погані вчинки?</h3>
+      </a>
+      <a class="card" href="https://www.youtube.com/watch?v=f0cFfLRp6rk" target="_blank" rel="noopener">
+        <div class="thumb"><img src="/assets/yt/f0cFfLRp6rk.jpg" alt="" loading="lazy"></div>
+        <h3>Коли Бог мовчить: чи чує Він твої сльози?</h3>
+      </a>
+      <a class="card" href="https://www.youtube.com/watch?v=_oQOS32FwH4" target="_blank" rel="noopener">
+        <div class="thumb"><img src="/assets/yt/_oQOS32FwH4.jpg" alt="" loading="lazy"></div>
+        <h3>Як навчити дітей бути мудрими?</h3>
+        <small>Пастор Михайло Скрипкар</small>
+      </a>
+    </div>
+    <div class="wrap">
+      <a class="btn btn--ghost" href="https://www.youtube.com/@bucha.centralna/videos" target="_blank" rel="noopener">Усі проповіді на YouTube</a>
+    </div>
+  </section>
+
+  <section class="sec" id="kursy" aria-labelledby="kursy-h">
+    <div class="wrap courses">
+      <div>
+        <h2 id="kursy-h">Курси на YouTube</h2>
+        <p class="lead" style="margin-top:16px">Серії відео про віру та Біблію. Оберіть тему і дивіться з першого випуску.</p>
+      </div>
+      <div>
+        <div class="chips">
+          <a class="chip" href="https://www.youtube.com/@bucha.centralna/playlists" target="_blank" rel="noopener">Світ на порозі змін<svg aria-hidden="true"><use href="#i-ext"/></svg></a>
+          <a class="chip" href="https://www.youtube.com/@bucha.centralna/playlists" target="_blank" rel="noopener">Основи віри<svg aria-hidden="true"><use href="#i-ext"/></svg></a>
+          <a class="chip" href="https://www.youtube.com/@bucha.centralna/playlists" target="_blank" rel="noopener">Відповіді, які шукаєш<svg aria-hidden="true"><use href="#i-ext"/></svg></a>
+          <a class="chip" href="https://www.youtube.com/@bucha.centralna/playlists" target="_blank" rel="noopener">Жити далі<svg aria-hidden="true"><use href="#i-ext"/></svg></a>
+        </div>
+        <p style="margin-top:20px;color:var(--g61);font-size:15px">«Світ на порозі змін» — курс з основ Біблії.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec about on-dark" id="pro-nas" aria-labelledby="about-h">
+    <div class="wrap about-grid">
+      <div>
+        <span class="label">Про нас</span>
+        <h2 id="about-h" style="margin-top:14px">Церква адвентистів сьомого дня «Буча-Центральна»</h2>
+      </div>
+      <div>
+        <blockquote>Ми християнська церква з Бучі, яка любить Бога і прагне служити суспільству.</blockquote>
+        <p>Християнська церква в Бучі. Проповіді, молитва, духовна підтримка та живі історії людей з нашого міста. Адвентисти сьомого дня — протестантська церква; ми збираємося на богослужіння в суботу.</p>
+        <div class="pastor">
+          <span class="mark"><img src="/assets/img/yt-avatar.jpg" alt="" width="56" height="56" loading="lazy"></span>
+          <span><b>Михайло Скрипкар</b>Пастор церкви</span>
+        </div>
+        <a class="btn btn--light" href="#vizyt">Прийти в суботу</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="place-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="place-h">Життя церкви</h2>
+          <p class="lead">Що відбувається в нашій церкві, крім суботнього богослужіння.</p>
+        </div>
+      </div>
+      <div class="place">
+        <a class="tile" href="https://www.instagram.com/asd_bucha" target="_blank" rel="noopener">
+          <div class="thumb"><img src="/assets/photos/kids.jpg" alt="Діти з подарунками на сцені церкви" loading="lazy"></div>
+          <h3>Діти</h3>
+          <p>Дитяче служіння і благодійна акція «Діти дітям»: діти збирають подарунки іншим дітям.</p>
+          <span class="more">Дивитись в Instagram</span>
+        </a>
+        <a class="tile" href="https://www.instagram.com/asd_bucha" target="_blank" rel="noopener">
+          <div class="thumb"><img src="/assets/photos/people.jpg" alt="Усміхнена молодь за столом" loading="lazy"></div>
+          <h3>Молодь</h3>
+          <p>Молодіжне служіння церкви.</p>
+          <span class="more">Дивитись в Instagram</span>
+        </a>
+        <a class="tile" href="https://www.youtube.com/watch?v=4XwWrJoSZR4" target="_blank" rel="noopener">
+          <div class="thumb"><img src="/assets/photos/worship.jpg" alt="Двоє співаків на сцені церкви" loading="lazy"></div>
+          <h3>Хор і музика</h3>
+          <p>Хор і музичне служіння. Послухайте «Живеш в мені Ти», Інга Шнуренко.</p>
+          <span class="more">Слухати</span>
+        </a>
+        <a class="tile" href="#propovidi">
+          <div class="thumb"><img src="/assets/photos/preaching.jpg" alt="Чоловік з мікрофоном говорить до зали" loading="lazy"></div>
+          <h3>Проповіді</h3>
+          <p>Пастор і проповідники церкви. Записи — на YouTube.</p>
+          <span class="more">Дивитись</span>
+        </a>
+        <a class="tile" href="https://www.instagram.com/asd_bucha" target="_blank" rel="noopener">
+          <div class="thumb"><img src="/assets/photos/nativity.jpg" alt="Живий різдвяний вертеп біля церкви ввечері" loading="lazy"></div>
+          <h3>Різдво</h3>
+          <p>Живий вертеп біля церкви.</p>
+          <span class="more">Дивитись в Instagram</span>
+        </a>
+        <a class="tile" href="https://www.facebook.com/bucha.centralna" target="_blank" rel="noopener">
+          <div class="thumb"><img src="/assets/photos/outreach.jpg" alt="Роздача гуманітарної допомоги біля церкви" loading="lazy"></div>
+          <h3>Соціальне служіння</h3>
+          <p>Роздача гуманітарної допомоги біля церкви.</p>
+          <span class="more">Дивитись у Facebook</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--grey" id="de-my" aria-labelledby="loc-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="loc-h">Як дістатися</h2>
+      </div>
+      <div class="loc">
+        <div class="loc-card">
+          <img class="strip" src="/assets/photos/building.jpg" alt="Будівля церкви з висоти взимку на заході сонця" loading="lazy">
+          <div class="in">
+            <span class="label">Адреса</span>
+            <address>вул. Центральна, 2А<br>м. Буча, Київська обл.</address>
+            <p>Богослужіння щосуботи о 10:00. Прямий ефір на YouTube з 11:30.</p>
+            <a class="btn" href="https://maps.app.goo.gl/dcThRpXLxfbUmT7t6" target="_blank" rel="noopener">Прокласти маршрут</a>
+          </div>
+        </div>
+        <div class="map">
+          <iframe src="https://maps.google.com/maps?q=50.5467061,30.2191788&amp;z=16&amp;output=embed" title="Карта: вул. Центральна, 2А, Буча" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top">
+          <span class="mark"><img src="/assets/img/yt-avatar.jpg" alt="" width="42" height="42" loading="lazy"></span>
+          <span><b>Буча Центральна</b><small>Церква адвентистів сьомого дня</small></span>
+        </a>
+        <p style="margin-top:20px;max-width:40ch">Християнська церква в Бучі. Проповіді, молитва, духовна підтримка та живі історії людей з нашого міста.</p>
+      </div>
+      <div>
+        <h3>Адреса</h3>
+        <p>вул. Центральна, 2А<br>м. Буча, Київська обл.</p>
+        <p style="margin-top:12px">Богослужіння: субота, 10:00</p>
+        <p style="margin-top:12px"><a href="https://maps.app.goo.gl/dcThRpXLxfbUmT7t6" target="_blank" rel="noopener">Прокласти маршрут</a></p>
+      </div>
+      <div>
+        <h3>Соцмережі</h3>
+        <div class="soc">
+          <a href="https://www.youtube.com/@bucha.centralna" target="_blank" rel="noopener" aria-label="YouTube"><svg aria-hidden="true"><use href="#i-yt"/></svg></a>
+          <a href="https://www.instagram.com/asd_bucha" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
+          <a href="https://www.facebook.com/bucha.centralna" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true"><use href="#i-fb"/></svg></a>
+        </div>
+        <p style="margin-top:16px">Анонси — в Instagram.</p>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 Церква адвентистів сьомого дня «Буча-Центральна»</div>
+  </div>
+</footer>
+
+<a class="variants" href="/">← усі варіанти</a>
+
+<script>
+document.querySelectorAll('.car-ctrl button').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=document.getElementById('track');
+    t.scrollBy({left:+b.dataset.dir*t.clientWidth*0.8,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  });
+});
+</script>
+</body>
+</html>
