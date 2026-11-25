@@ -13,4 +13,5 @@
 
 Факти й джерела: `CONTENT.md`. Фото: `assets/photos/` (вибрані), `assets/fb/`, `assets/ig/` (усе завантажене з соцмереж церкви).
 
-Публічне посилання для показу: `ngrok http 8090`.
+Публічне посилання для показу (dev mode): `./serve.sh` — піднімає сервер і ngrok, друкує обидва посилання; Ctrl+C зупиняє.
+Потрібні `python3` і `ngrok` з authtoken (`ngrok config add-authtoken <токен>`). Покрокова інструкція (і для Claude Code) — `CLAUDE.md`.
