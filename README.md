@@ -1,5 +1,7 @@
 # Bucha Centralna church site: 3 prototypes
 
+Live site (GitHub Pages, published from `main`): https://buchacentralna.github.io/ce-site/
+
 Plain static HTML and CSS, no build step. Run it from this folder:
 
     python3 -m http.server 8090

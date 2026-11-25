@@ -39,6 +39,26 @@ Important:
   `python -m http.server 8090 --bind 127.0.0.1` and `ngrok http 127.0.0.1:8090`. The URL is shown
   in the ngrok window.
 
+## Editing and publishing (GitHub Pages)
+
+The live site is https://buchacentralna.github.io/ce-site/. GitHub Pages serves the `main`
+branch (root folder) as is: every push to `main` republishes the site in about a minute.
+
+When the user asks to change the site:
+
+1. `git pull` first, so you edit the latest version.
+2. Edit the `index.html` of the page. Keep every local path relative (`../assets/...` in
+   `v1`–`v3`, `assets/...` in the root `index.html`). Never start a local path with `/`: on
+   GitHub Pages the site lives under `/ce-site/`, so `/assets/...` breaks the images.
+3. Show the change locally (`python3 -m http.server 8090`, open `http://localhost:8090/`) and let
+   the user look before publishing.
+4. Publish only when the user says so: `git add -A && git commit -m "<what changed>" && git push`.
+5. Verify: wait until `gh api repos/buchacentralna/ce-site/pages/builds/latest --jq .status`
+   prints `built`, then `curl -s -o /dev/null -w '%{http_code}' https://buchacentralna.github.io/ce-site/<page>`
+   must return `200`. Give the user the live link.
+
+The repository is public: anything pushed (photos too) is visible to everyone.
+
 ## Layout
 
 - `/` (`index.html`): the variant chooser; `/v1/`, `/v2/`, `/v3/`: three designs (see `README.md`)
