@@ -30,8 +30,8 @@ if [ -z "$URL" ]; then
 fi
 
 echo
-echo "  Локально:   http://localhost:$PORT/"
-echo "  Публічно:   $URL/"
+echo "  Local:    http://localhost:$PORT/"
+echo "  Public:   $URL/"
 echo
-echo "  Ctrl+C — зупинити сервер і тунель."
+echo "  Press Ctrl+C to stop the server and the tunnel."
 wait $NGROK
